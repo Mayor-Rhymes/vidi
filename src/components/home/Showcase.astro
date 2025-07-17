@@ -1,0 +1,32 @@
+---
+
+interface Props {
+    image: ImageMetadata;
+    title: string;
+    description: string[];
+    reverse?: boolean;
+}
+import { Image } from "astro:assets";
+import MissionImage from "../../images/mission-image.png";
+import type { ImageMetadata } from "astro";
+
+const {image, title, description, reverse} = Astro.props;
+
+---
+
+
+<div class={`flex justify-center items-center px-20 ${reverse ? 'flex-row-reverse' : ''}`}>
+  <div class="flex-1/2 items-center justify-center">
+    <Image src={image} alt="Mission Image" class="lg:h-1/4" />
+  </div>
+  <div class="flex flex-1/2 flex-col space-y-4 justify-center items-center text-center">
+    <h3 class="text-3xl font-extrabold uppercase">{title}</h3>
+    <div class="flex flex-col space-y-1">
+
+        {description.map((line) => (
+            <p>{line}</p>
+        ))}
+      
+    </div>
+  </div>
+</div>

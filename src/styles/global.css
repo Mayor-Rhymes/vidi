@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Roboto Variable", sans-serif;
+    --hero-image-1: url("../../public/images/hero-image-2.png");
+
+}

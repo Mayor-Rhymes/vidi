@@ -1,0 +1,32 @@
+---
+import Button from "../Button.astro";
+---
+
+<div class="flex h-screen">
+  <div class="lg:flex-1/3 relative">
+    <div
+      class="w-full bg-[url(images/hero-image-2.png)] bg-cover absolute bg-no-repeat bg-origin-content h-full"
+    >
+    </div>
+    <div
+      class="w-full h-full absolute left-0 top-0 bg-black opacity-90 text-white flex flex-col space-y-10 items-center justify-center"
+    >
+      <div class="text-center capitalize text-lg leading-10 tracking-normal">
+        <p>
+          Empowering <span class="font-semibold text-3xl italic">women</span>
+        </p>
+
+        <p>& <span class="font-semibold text-3xl italic">children</span></p>
+
+        <p>against <span class="font-semibold text-3xl italic">abuse</span></p>
+      </div>
+
+      <Button title="Join Us" />
+    </div>
+  </div>
+
+  <div
+    class="lg:flex-2/3 bg-[url(images/hero-image.png)] bg-no-repeat bg-cover bg-top-right"
+  >
+  </div>
+</div>

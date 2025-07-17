@@ -1,0 +1,63 @@
+---
+import Showcase from "./Showcase.astro";
+import MissionImage from "../../images/mission-image.png";
+import VisionImage from "../../images/vision-image.png";
+
+const missionDescription = [
+  "We exist to inspire, empower, and educate every",
+  "woman and child in Africa with preventive and",
+  "coping skills to live above SGBV and other",
+  "rights violations.",
+];
+
+const visionDescription = [
+  "We see an Africa where women and children do",
+  "not have their development distorted by the",
+  "prevalence of SGBV but have their rights well",
+  "recognized and protected.",
+];
+---
+
+<div class="flex flex-col space-y-20 py-15">
+  <div class="flex flex-col space-y-4">
+    <h3 class="text-center font-extrabold text-3xl">
+      Welcome to Vivacious Development Initiative (VIDI)
+    </h3>
+    <div class="flex lg:flex-col place-items-center leading-8 tracking-normal">
+      <p>
+        We believe in prevention over cure. Founded in 2013 by Onyinyechi J.
+        Nwosu, VIDI is
+      </p>
+      <p>
+        dedicated to inspiring, empowering, and educating women and children
+        across Africa
+      </p>
+      <p>
+        to live above sexual and gender-based violence (SGBV) and other rights
+        violations.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-col">
+    <Showcase
+      image={MissionImage}
+      title="Our Mission"
+      description={missionDescription}
+    />
+
+    <Showcase
+      image={VisionImage}
+      title="Our Vision"
+      description={visionDescription}
+      reverse={true}
+    />
+  </div>
+
+
+  <button class="font-bold rounded-md bg-white border-2 border-red-700 p-3 px-10 self-center">
+    Learn More
+  </button>
+
+  
+</div>
