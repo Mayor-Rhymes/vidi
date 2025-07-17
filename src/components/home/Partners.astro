@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import unitedNations from "../../images/logos-partners/united-nations.png";
+import unicef from "../../images/logos-partners/unicef.png";
+import iiu from "../../images/logos-partners/iiu.png";
+import womenAffairs from "../../images/logos-partners/women-affairs-ministry.png";
+import govAbia from "../../images/logos-partners/gov-abia.png";
+import ndi from "../../images/logos-partners/ndi.png";
+import nactal from "../../images/logos-partners/nactal.png";
+---
+
+<div class="flex flex-col pt-20 space-y-8 py-6 pb-16">
+  <h3 class="uppercase text-center font-semibold text-3xl">Our Partners</h3>
+
+  <div class="grid grid-cols-2 lg:grid-cols-4">
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={unitedNations} alt="united nations" />
+    </div>
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={unicef} alt="unicef" />
+    </div>
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={iiu} alt="iiu" />
+    </div>
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={womenAffairs} alt="women affairs ministry" />
+    </div>
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={govAbia} alt="abia state government" />
+    </div>
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={ndi} alt="ndi" />
+    </div>
+    <div
+      class="flex items-center justify-center border-2 border-yellow-400 p-10"
+    >
+      <Image src={nactal} alt="nactal" />
+    </div>
+  </div>
+
+  <button
+    class="bg-red-600 text-white font-semibold rounded-md p-3 px-7 cursor-pointer self-center"
+  >
+    Partner With Us
+  </button>
+</div>

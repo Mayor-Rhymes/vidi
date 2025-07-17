@@ -1,0 +1,47 @@
+---
+import ApproachImage from "../../images/approach-image.png";
+import JoinUsImage from "../../images/joinus-image.png";
+import Showcase from "./Showcase.astro";
+
+const approachDescription = [
+  "We focus on prevention through education,",
+  "empowerment, and community engagement.",
+  "Through our proactive initiatives & partnerships,",
+  "we aim to create a safer environment for every",
+  "individual to thrive.",
+];
+
+const joinUsDescription = [
+  "Join us in our mission to build a safer",
+  "Africa. Explore our past projects, read",
+  "our blog, and connect with us to learn",
+  "how you can make a difference.",
+];
+---
+
+<div class="flex flex-col pt-10 space-y-20">
+  <div class="flex flex-col ">
+    <Showcase
+      image={ApproachImage}
+      title="Our Approach"
+      description={approachDescription}
+    />
+
+    <Showcase
+      image={JoinUsImage}
+      title="Join Us"
+      description={joinUsDescription}
+      reverse
+    />
+  </div>
+
+
+   <button
+    class="bg-red-600 text-white font-semibold rounded-md p-3 px-7 cursor-pointer self-center"
+  >
+    Make a Change
+  </button>
+
+
+  
+</div>
