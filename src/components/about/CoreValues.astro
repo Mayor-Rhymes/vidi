@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import communityImage from "../../images/core-value-logos/People.png";
+import empowermentImage from "../../images/core-value-logos/empowerment.png";
+import excellenceImage from "../../images/core-value-logos/excellence.png";
+import teamworkImage from "../../images/core-value-logos/teamwork.svg";
+---
+
+<div class="py-12 flex flex-col gap-6">
+  <h4 class="uppercase text-center text-3xl font-extrabold">Our Core Values</h4>
+
+  <p class="text-center">
+    These values guide everything we do at VIDI. They serve as the foundation <br
+    /> of our organization, shaping our actions and decisions as we strive for positive
+    change.
+  </p>
+
+  <div class="flex gap-4 justify-evenly">
+    <div class="flex flex-col gap-4 justify-center items-center">
+      <Image src={communityImage} alt="community" />
+      <p class="text-xl">Community</p>
+    </div>
+    <div class="flex flex-col gap-4 justify-center items-center">
+      <Image src={empowermentImage} alt="empowerment" />
+      <p class="text-xl">Empowerment</p>
+    </div>
+    <div class="flex flex-col gap-4 justify-center items-center">
+      <Image src={excellenceImage} alt="excellence" />
+      <p class="text-xl">Excellence</p>
+    </div>
+    <div class="flex flex-col gap-4 justify-center items-center">
+      <Image src={teamworkImage} alt="teamwork" />
+      <p class="text-xl">Teamwork</p>
+    </div>
+  </div>
+</div>

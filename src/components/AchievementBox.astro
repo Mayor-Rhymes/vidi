@@ -1,0 +1,16 @@
+---
+interface AchievementBoxProps {
+  count: number | string;
+  title: string;
+  black: boolean;
+}
+
+const { count, title, black } = Astro.props;
+---
+
+<div
+  class=`text-white flex flex-col flex-grow gap-4 justify-center text-center p-4 ${black ? "bg-black" : "bg-red-600"}`
+>
+  <p class="text-4xl font-extrabold">{count}</p>
+  <p class="text-xl">{title}</p>
+</div>
