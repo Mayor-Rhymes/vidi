@@ -14,5 +14,8 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.1",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10"
   }
 }
