@@ -67,7 +67,7 @@ import { Menu } from "@lucide/astro";
   const logo = document.querySelector("#logo");
   const menuButton = document.querySelector("#menu-button");
   const mobilePane = document.querySelector(".mobile-pane") as HTMLElement;
-  const overlay = document.querySelector(".overlay") as HTMLElement;
+  // const overlay = document.querySelector(".overlay") as HTMLElement;
   handleNavigation(logo);
 
   function handleNavigation(target: Element | null) {
@@ -76,20 +76,34 @@ import { Menu } from "@lucide/astro";
     });
   }
 
-  menuButton?.addEventListener("click", () => {
+  menuButton?.addEventListener("click", handleVisibility);
+
+  function handleVisibility() {
     const style = window.getComputedStyle(mobilePane);
-    const display = style.getPropertyValue("display");
+    const opacity = style.getPropertyValue("opacity");
     const body = document.querySelector("body") as HTMLElement;
-    console.log(display);
-    if (display === "none") {
-      // animate(".mobile-pane", {
-      //   scale: 1,
-      //   ease: 'out(4)',
-      //   duration: 500,
-      // })
-      mobilePane.style.display = "flex";
+    const overlay = document.querySelector(".overlay") as HTMLElement;
+    console.log(opacity);
+    if (opacity === "0") {
+      animate(".mobile-pane", {
+        opacity: 1,
+        // scale: 1,
+        zIndex: "30",
+        width: "50%",
+        ease: "out(4)",
+        duration: 700,
+      });
+      // mobilePane.style.zIndex = "30";
       body.style.overflowY = "hidden";
       overlay.style.display = "block";
     }
-  });
+  }
 </script>
+
+
+<style>
+
+  #menu-button {
+    z-index: 20;
+  }
+</style>

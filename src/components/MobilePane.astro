@@ -45,57 +45,75 @@ import { X } from "@lucide/astro";
 </div>
 
 <script>
+  import { animate } from "animejs";
   const closeButton = document.querySelector("#close-button");
   const mobilePane = document.querySelector(".mobile-pane") as HTMLElement;
   const body = document.querySelector("body") as HTMLElement;
   const overlay = document.querySelector(".overlay") as HTMLElement;
   closeButton?.addEventListener("click", () => {
     //   console.log(mobilePane.style.display);
-    mobilePane.style.display = "none";
+    animate(".mobile-pane", {
+      opacity: 0,
+      // scale: 0.5,
+      zIndex: "10",
+      width: "0%",
+      ease: "out(4)",
+      duration: 700,
+    });
+    // mobilePane.style.opacity = "0";
     body.style.overflowY = "scroll";
+    // mobilePane.style.zIndex = "10";
     overlay.style.display = "none";
+
+    console.log(overlay.style.display);
   });
 
-
   overlay.addEventListener("click", () => {
-    mobilePane.style.display = "none";
+    animate(".mobile-pane", {
+      opacity: {
+        to: 0,
+        duration: 1500,
+      },
+      width: "0%",
+      ease: "out(4)",
+      duration: 700,
+    });
     body.style.overflowY = "scroll";
     overlay.style.display = "none";
-
-    // console.log("Here");
   });
 </script>
 
 <style is:global>
   @media screen and (max-width: 768px) {
-
     .mobile-pane {
-      display: none;
-      
+      /* display: none; */
+
       position: absolute;
       height: 100%;
       right: 0;
       top: 0;
-      width: 50%;
+      width: 0%;
       background-color: white;
-      z-index: 40;
+      z-index: 10;
       padding-top: 10px;
       flex-direction: column;
       overflow-y: hidden;
+      opacity: 0;
+      cursor: pointer;
+      display: flex;
+      /* transform: scale(0.5); */
     }
 
     .overlay {
-
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 30;
-        background-color: black;
-        opacity: 0.5;
-        top: 0;
-        left: 0;
-        display: none;
-
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      z-index: 30;
+      background-color: black;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      display: none;
     }
   }
 </style>
