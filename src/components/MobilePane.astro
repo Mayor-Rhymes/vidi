@@ -1,0 +1,101 @@
+---
+import { X } from "@lucide/astro";
+---
+
+<div class="overlay"></div>
+<div class="mobile-pane">
+  <X class="self-end cursor-pointer" size="40" id="close-button" />
+  <ul class="flex flex-col justify-start space-y-5 pl-3 pt-20">
+    <li>
+      <a
+        href="/"
+        class="border-b-red-500 hover:border-b-2 transition-all duration-75 delay-[20ms] pb-0.5"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href="/about"
+        class="border-b-red-500 hover:border-b-2 transition-all duration-75 delay-[20ms] pb-0.5"
+        >About us</a
+      >
+    </li>
+    <li>
+      <a
+        href="/projects"
+        class="border-b-red-500 hover:border-b-2 transition-all duration-75 delay-[20ms] pb-0.5"
+        >Projects</a
+      >
+    </li>
+    <li>
+      <a
+        href="/news"
+        class="border-b-red-500 hover:border-b-2 transition-all duration-75 delay-[20ms] pb-0.5"
+        >News</a
+      >
+    </li>
+    <li>
+      <a
+        href="/contact"
+        class="border-b-red-500 hover:border-b-2 transition-all duration-75 delay-[20ms] pb-0.5"
+        >Contact us</a
+      >
+    </li>
+  </ul>
+</div>
+
+<script>
+  const closeButton = document.querySelector("#close-button");
+  const mobilePane = document.querySelector(".mobile-pane") as HTMLElement;
+  const body = document.querySelector("body") as HTMLElement;
+  const overlay = document.querySelector(".overlay") as HTMLElement;
+  closeButton?.addEventListener("click", () => {
+    //   console.log(mobilePane.style.display);
+    mobilePane.style.display = "none";
+    body.style.overflowY = "scroll";
+    overlay.style.display = "none";
+  });
+
+
+  overlay.addEventListener("click", () => {
+    mobilePane.style.display = "none";
+    body.style.overflowY = "scroll";
+    overlay.style.display = "none";
+
+    // console.log("Here");
+  });
+</script>
+
+<style is:global>
+  @media screen and (max-width: 768px) {
+
+    .mobile-pane {
+      display: none;
+      
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+      width: 50%;
+      background-color: white;
+      z-index: 40;
+      padding-top: 10px;
+      flex-direction: column;
+      overflow-y: hidden;
+    }
+
+    .overlay {
+
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 30;
+        background-color: black;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        display: none;
+
+    }
+  }
+</style>
