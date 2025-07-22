@@ -67,7 +67,6 @@ import { Menu } from "@lucide/astro";
   const logo = document.querySelector("#logo");
   const menuButton = document.querySelector("#menu-button");
   const mobilePane = document.querySelector(".mobile-pane") as HTMLElement;
-  // const overlay = document.querySelector(".overlay") as HTMLElement;
   handleNavigation(logo);
 
   function handleNavigation(target: Element | null) {
@@ -86,6 +85,7 @@ import { Menu } from "@lucide/astro";
     console.log(opacity);
     if (opacity === "0") {
       animate(".mobile-pane", {
+        display: "flex",
         opacity: 1,
         // scale: 1,
         zIndex: "30",
@@ -93,16 +93,13 @@ import { Menu } from "@lucide/astro";
         ease: "out(4)",
         duration: 700,
       });
-      // mobilePane.style.zIndex = "30";
       body.style.overflowY = "hidden";
       overlay.style.display = "block";
     }
   }
 </script>
 
-
 <style>
-
   #menu-button {
     z-index: 20;
   }

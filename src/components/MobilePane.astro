@@ -51,21 +51,16 @@ import { X } from "@lucide/astro";
   const body = document.querySelector("body") as HTMLElement;
   const overlay = document.querySelector(".overlay") as HTMLElement;
   closeButton?.addEventListener("click", () => {
-    //   console.log(mobilePane.style.display);
     animate(".mobile-pane", {
       opacity: 0,
-      // scale: 0.5,
       zIndex: "10",
       width: "0%",
       ease: "out(4)",
       duration: 700,
     });
-    // mobilePane.style.opacity = "0";
-    body.style.overflowY = "scroll";
-    // mobilePane.style.zIndex = "10";
-    overlay.style.display = "none";
 
-    console.log(overlay.style.display);
+    body.style.overflowY = "scroll";
+    overlay.style.display = "none";
   });
 
   overlay.addEventListener("click", () => {
@@ -86,7 +81,7 @@ import { X } from "@lucide/astro";
 <style is:global>
   @media screen and (max-width: 768px) {
     .mobile-pane {
-      /* display: none; */
+      display: none;
 
       position: absolute;
       height: 100%;
@@ -100,7 +95,7 @@ import { X } from "@lucide/astro";
       overflow-y: hidden;
       opacity: 0;
       cursor: pointer;
-      display: flex;
+      /* display: flex; */
       /* transform: scale(0.5); */
     }
 
