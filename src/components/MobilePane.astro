@@ -76,9 +76,18 @@ import { X } from "@lucide/astro";
     body.style.overflowY = "scroll";
     overlay.style.display = "none";
   });
+
+  
 </script>
 
 <style is:global>
+  .mobile-pane {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
   @media screen and (max-width: 768px) {
     .mobile-pane {
       display: none;

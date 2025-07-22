@@ -1,9 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import founderImage from "../../images/our-team-images/founder.png";
+import Delight from "../../images/our-team-images/delight.png";
+import Chuka from "../../images/our-team-images/chuka.png";
+import Grace from "../../images/our-team-images/grace.png";
+import Ihuoma from "../../images/our-team-images/ihuoma.png";
+import Favour from "../../images/our-team-images/favour.png";
+import Onyinyechi from "../../images/our-team-images/onyinyechi.png";
+import TeamCard from "../TeamCard.astro";
+import Button from "../Button.astro";
 ---
 
-<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-10 py-10">
   <h4 class="uppercase text-center text-3xl font-extrabold">Our Team</h4>
 
   <div class="flex flex-col lg:flex-row justify-around items-center">
@@ -59,4 +67,122 @@ import founderImage from "../../images/our-team-images/founder.png";
     passion for <br /> empowering women and children across Africa. Get to know the
     dedicated individuals <br /> behind our mission:
   </h5>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 place-items-center lg:px-40"
+  >
+    <TeamCard
+      src={Delight}
+      alt="Head of Operations"
+      name="GodsDelight Agu"
+      title="Head of Operations"
+      description={[
+        "Godsdelight Agu, also known as Bookie, is a",
+        "digital and social entrepreneur advocating for",
+        "women and girls rights. As our Head of",
+        "Operations, she brings her personal",
+        "experiences as a survivor of sexual abuse to",
+        "drive change and innovation within VIDI.",
+      ]}
+    />
+
+    <TeamCard
+      src={Chuka}
+      alt="Programs Coordinator"
+      name="Chuka Okoye"
+      title="Programs Coordinator"
+      description={[
+        "Chuka Okoye is a business consultant,",
+        "strategist, systems technician, and human",
+        "rights defender. Known for his dedication to",
+        "creating a rights-respecting, policing",
+        "atmosphere, Chuka plays a crucial role in",
+        "planning and executing VIDI's programs.",
+      ]}
+    />
+    <TeamCard
+      src={Grace}
+      alt="Asst Programs Coordinator"
+      name="Grace Obilor"
+      title="Asst Programs Coordinator"
+      description={[
+        "Grace Obilor is a computer science graduate",
+        "from Michael Okpara University of Agriculture,",
+        "an entrepreneur, and a woman/girl child",
+        "advocate. She cofounded Iter Lux Foundation",
+        "for Woman and Child development and brings",
+        "her dedication to VIDI as our Assistant",
+        "Programs Coordinator.",
+      ]}
+    />
+    <TeamCard
+      src={Delight}
+      alt="Tech Consultant"
+      name="Chika Nwanmuo"
+      title="Head of Operations"
+      description={[
+        "Godsdelight Agu, also known as Bookie, is a",
+        "digital and social entrepreneur advocating for",
+        "women and girls rights. As our Head of",
+        "Operations, she brings her personal",
+        "experiences as a survivor of sexual abuse to",
+        "drive change and innovation within VIDI.",
+      ]}
+    />
+    <TeamCard
+      src={Ihuoma}
+      alt="Finance Officer"
+      name="Ihuoma Onuoha"
+      title="Finance Officer"
+      description={[
+        "Godsdelight Agu, also known as Bookie, is a",
+        "digital and social entrepreneur advocating for",
+        "women and girls rights. As our Head of",
+        "Operations, she brings her personal",
+        "experiences as a survivor of sexual abuse to",
+        "drive change and innovation within VIDI.",
+      ]}
+    />
+    <TeamCard
+      src={Favour}
+      alt="Community Engagement and Outreach Officer"
+      name="Favour Ndudim"
+      title="Community Engagement and Outreach Officer"
+      description={[
+        "Favour Ndudim is a pharmacist in training with",
+        "a deep passion for advancing women's",
+        "reproductive health. She specialises in",
+        "women's sexual health, focusing on common",
+        "vaginal infections and reproductive health",
+        "challenges, reaching over 1,000 women across",
+        "Africa through her work.",
+      ]}
+    />
+    <TeamCard
+      src={Onyinyechi}
+      alt="Admin Officer"
+      name="Onyinyechi Uzochukwu"
+      title="Admin Officer"
+      description={[
+        "Onyinyechi Uzochukwu is a banker turned caterer,",
+        "running Dellasylv Confectionaries and Food. With a",
+        "background in banking and a passion for female",
+        "empowerment, she ensures the smooth operation of",
+        "VIDI's initiatives.",
+      ]}
+    />
+  </div>
+
+
+  <div class="text-center flex flex-col lg:text-xl">
+    <p>Whether you are seeking support as a survivor, advocating for change as a community</p>
+    <p>leader, or aiming to make a difference as a supporter, we welcome you to join us on our</p>
+    <p>journey. Together, we can create a brighter future for women and children across Africa.</p>
+  </div>
+
+
+  <Button title="Join Us" />
+
+    
+  
 </div>

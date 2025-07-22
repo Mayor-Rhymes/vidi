@@ -1,2 +1,27 @@
+---
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  name: string;
+  title: string;
+  description: string[];
+}
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+const { src, alt, name, title, description } = Astro.props;
+---
 
+<div class="flex flex-col space-y-4 items-center justify-center bg-yellow-100 drop-shadow-lg">
+  <Image src={src} alt={alt} class="w-full h-[300px]" />
 
+  <div class="flex flex-col items-center text-center space-y-4 pb-3 px-1">
+    <p><span class="font-semibold">{name}</span> - <span>{title}</span></p>
+    <div class="text-sm flex flex-col space-y-2 ">
+        {description.map((line) => (
+          <p class="">{line}</p>
+        ))}
+        </div>
+  </div>
+
+  
+</div>
