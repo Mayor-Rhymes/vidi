@@ -2,7 +2,7 @@
 import Button from "../Button.astro";
 ---
 
-<div class="flex h-screen">
+<div class="flex h-screen" id="home-first-hero">
   <div class="lg:flex-1/3 md:flex-1/3 flex-1 relative">
     <div
       class="w-full bg-[url(../images/hero-image-2.png)] bg-cover absolute bg-no-repeat bg-origin-content h-full"
@@ -30,3 +30,25 @@ import Button from "../Button.astro";
   >
   </div>
 </div>
+
+
+
+<script>
+  import { animate, utils, onScroll } from "animejs";
+
+  const [container] = utils.$("#scroll-container");
+
+  const debug = true;
+
+  animate("#home-first-hero", {
+    opacity: {
+      from: 0,
+      to: 1,
+    },
+    alternate: true,
+    repeat: true,
+    // loop: true,
+    duration: 2000,
+    autoplay: onScroll({ container, debug }),
+  });
+</script>

@@ -3,9 +3,14 @@ import AchievementBox from "../AchievementBox.astro";
 ---
 
 <div class="flex flex-col py-14 gap-8">
-  <h4 class="uppercase text-center text-xl md:text-2xl lg:text-3xl font-extrabold">Our Story</h4>
+  <h4
+    class="uppercase text-center text-xl md:text-2xl lg:text-3xl font-extrabold"
+    id="story-title"
+  >
+    Our Story
+  </h4>
 
-  <div class="text-center lg:text-lg">
+  <div class="text-center lg:text-lg" id="story-text">
     <p>
       Following our Founder, Onyinyechi’s experiences as a survivor of sexual
       abuse, she dedicated
@@ -20,7 +25,7 @@ import AchievementBox from "../AchievementBox.astro";
     </p>
     <p>laying the foundation for what would later become VIDI.</p>
   </div>
-  <div class="text-center lg:text-lg">
+  <div class="text-center lg:text-lg" id="story-text-2">
     <p>
       Officially registered as Vivacious Development Initiative in 2008, we have
       consistently worked
@@ -39,26 +44,45 @@ import AchievementBox from "../AchievementBox.astro";
     </p>
   </div>
 
-  <div class="flex flex-col md:flex-row lg:flex-row lg:h-[289px]">
-    <AchievementBox
-      
-      title="Women Empowered"
-      count="10,000+"
-    />
-    <AchievementBox
-      black
-      title="SGBV Survivors"
-      count="2,500+"
-    />
-    <AchievementBox
-      
-      title="Skilled Girls"
-      count="500+"
-    />
-    <AchievementBox
-      black
-      title="Communities"
-      count="25+"
-    />
+  <div
+    class="flex flex-col md:flex-row lg:flex-row lg:h-[289px]"
+    id="achievements"
+  >
+    <AchievementBox title="Women Empowered" count="10,000+" />
+    <AchievementBox black title="SGBV Survivors" count="2,500+" />
+    <AchievementBox title="Skilled Girls" count="500+" />
+    <AchievementBox black title="Communities" count="25+" />
   </div>
 </div>
+
+<script>
+  import { animate, onScroll, utils, stagger } from "animejs";
+
+  const [container] = utils.$("#scroll-container");
+  const debug = true;
+  animate(["#story-text", "#story-title", "#story-text-2"], {
+    scale: {
+      from: 0.3,
+      to: 1,
+    },
+    translateX: {
+      from: "-10px",
+      to: "0",
+    },
+    duration: 400,
+    autoplay: onScroll({ container, debug }),
+  });
+
+  animate("#achievements", {
+    opacity: {
+      from: 0,
+      to: 1,
+    },
+    scale: {
+      from: 0.3,
+      to: 1,
+    },
+    duration: 600,
+    autoplay: onScroll({ container, debug }),
+  });
+</script>
