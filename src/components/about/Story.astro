@@ -56,10 +56,10 @@ import AchievementBox from "../AchievementBox.astro";
 </div>
 
 <script>
-  import { animate, onScroll, utils, stagger } from "animejs";
+  import { animate, onScroll, utils } from "animejs";
 
   const [container] = utils.$("#scroll-container");
-  const debug = true;
+  
   animate(["#story-text", "#story-title", "#story-text-2"], {
     scale: {
       from: 0.3,
@@ -70,7 +70,7 @@ import AchievementBox from "../AchievementBox.astro";
       to: "0",
     },
     duration: 400,
-    autoplay: onScroll({ container, debug }),
+    autoplay: onScroll({ container }),
   });
 
   animate("#achievements", {
@@ -83,6 +83,6 @@ import AchievementBox from "../AchievementBox.astro";
       to: 1,
     },
     duration: 600,
-    autoplay: onScroll({ container, debug }),
+    autoplay: onScroll({ container}),
   });
 </script>

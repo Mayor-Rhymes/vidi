@@ -40,7 +40,7 @@ const { image, title, description, reverse } = Astro.props;
 
   const [container] = utils.$("#scroll-container");
 
-  const debug = true;
+  
 
   animate("#showcase-image-right", {
     translateX: {
@@ -53,7 +53,7 @@ const { image, title, description, reverse } = Astro.props;
     duration: 500,
     autoplay: onScroll({
       container,
-      debug,
+      
       enter: "bottom top",
       // Leaves when the top of the container meets the bottom of the target
       leave: "top bottom",
@@ -70,7 +70,7 @@ const { image, title, description, reverse } = Astro.props;
     duration: 500,
     autoplay: onScroll({
       container,
-      debug,
+      
       enter: "bottom top",
       // Leaves when the top of the container meets the bottom of the target
       leave: "top bottom",
@@ -85,7 +85,7 @@ const { image, title, description, reverse } = Astro.props;
     alternate: true,
     repeat: true,
     duration: 500,
-    autoplay: onScroll({ container, debug, enter: 'bottom top',
+    autoplay: onScroll({ container, enter: 'bottom top',
   // Leaves when the top of the container meets the bottom of the target
   leave: 'top bottom', }),
   });

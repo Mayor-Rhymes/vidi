@@ -68,7 +68,7 @@
 
   const [container] = utils.$("#scroll-container");
 
-  const debug = true;
+  
 
   animate("#first-hero", {
     opacity: {
@@ -79,6 +79,6 @@
     repeat: true,
     // loop: true,
     duration: 2000,
-    autoplay: onScroll({ container, debug }),
+    autoplay: onScroll({ container }),
   });
 </script>

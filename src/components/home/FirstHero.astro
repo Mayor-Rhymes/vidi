@@ -38,7 +38,6 @@ import Button from "../Button.astro";
 
   const [container] = utils.$("#scroll-container");
 
-  const debug = true;
 
   animate("#home-first-hero", {
     opacity: {
@@ -49,6 +48,6 @@ import Button from "../Button.astro";
     repeat: true,
     // loop: true,
     duration: 2000,
-    autoplay: onScroll({ container, debug }),
+    autoplay: onScroll({ container }),
   });
 </script>

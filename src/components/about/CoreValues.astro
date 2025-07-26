@@ -65,7 +65,7 @@ import teamworkImage from "../../images/core-value-logos/teamwork.svg";
   import { animate, onScroll, utils, stagger } from "animejs";
 
   const [container] = utils.$("#scroll-container");
-  const debug = true;
+
   animate(["#community", "#empowerment", "#excellence", "#teamwork"], {
     scale: {
       from: 0.3,
@@ -77,6 +77,6 @@ import teamworkImage from "../../images/core-value-logos/teamwork.svg";
     },
     delay: stagger(200),
     duration: 700,
-    autoplay: onScroll({ container, debug }),
+    autoplay: onScroll({ container }),
   });
 </script>
